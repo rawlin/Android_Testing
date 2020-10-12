@@ -25,4 +25,36 @@ class RegistrationUtilTest{
         )
         assertThat(result).isTrue()
     }
+
+    @Test
+    fun `empty password return false`(){
+        val result=RegistrationUtil.validateRegistrationInput(
+            "rawlin",
+            "",
+            ""
+        )
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `incorrectly repeated password`(){
+        val result=RegistrationUtil.validateRegistrationInput(
+            "rawlin",
+            "asda",
+            "backa"
+        )
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `weak password returns false`(){
+        val result=RegistrationUtil.validateRegistrationInput(
+            "rawlin",
+            "1",
+            "1"
+        )
+        assertThat(result).isFalse()
+    }
+
+
 }
