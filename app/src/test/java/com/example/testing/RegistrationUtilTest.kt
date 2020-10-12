@@ -56,5 +56,15 @@ class RegistrationUtilTest{
         assertThat(result).isFalse()
     }
 
+    @Test
+    fun `uername exists return false`(){
+        val result=RegistrationUtil.validateRegistrationInput(
+            "rawlin1",
+            "pass",
+            "pass"
+        )
+        assertThat(result).isFalse()
+    }
+
 
 }
