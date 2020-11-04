@@ -15,7 +15,7 @@ object OtherFunctionToTest {
         var a = 0L
         var b = 1L
         var c = 1L
-        (1..n-2).forEach { i ->
+        (1..n-1).forEach { i ->
             c = a + b
             a = b
             b = c
