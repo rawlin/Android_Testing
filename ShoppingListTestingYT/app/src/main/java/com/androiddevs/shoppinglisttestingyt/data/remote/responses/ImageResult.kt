@@ -1,5 +1,6 @@
 package com.androiddevs.shoppinglisttestingyt.data.remote.responses
 
+
 import com.google.gson.annotations.SerializedName
 
 data class ImageResult(

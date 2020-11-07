@@ -12,13 +12,12 @@ import javax.inject.Named
 
 @Module
 @InstallIn(ApplicationComponent::class)
-object TestAppModule{
+object TestAppModule {
 
     @Provides
     @Named("test_db")
-    fun provideInMemoryDb(@ApplicationContext context: Context)=
-        Room.inMemoryDatabaseBuilder(context,ShoppingItemDatabase::class.java)
+    fun provideInMemoryDb(@ApplicationContext context: Context) =
+        Room.inMemoryDatabaseBuilder(context, ShoppingItemDatabase::class.java)
             .allowMainThreadQueries()
             .build()
-
 }

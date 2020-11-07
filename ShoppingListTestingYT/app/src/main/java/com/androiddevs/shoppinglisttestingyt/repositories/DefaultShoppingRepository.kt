@@ -7,15 +7,12 @@ import com.androiddevs.shoppinglisttestingyt.data.remote.PixabayAPI
 import com.androiddevs.shoppinglisttestingyt.data.remote.responses.ImageResponse
 import com.androiddevs.shoppinglisttestingyt.other.Resource
 import retrofit2.Response
-import java.lang.Exception
 import javax.inject.Inject
 
-class DefaultShoppingRepository
-@Inject
-constructor(
+class DefaultShoppingRepository @Inject constructor(
     private val shoppingDao: ShoppingDao,
     private val pixabayAPI: PixabayAPI
-):ShoppingRepository {
+) : ShoppingRepository {
 
     override suspend fun insertShoppingItem(shoppingItem: ShoppingItem) {
         shoppingDao.insertShoppingItem(shoppingItem)
@@ -35,16 +32,30 @@ constructor(
 
     override suspend fun searchForImage(imageQuery: String): Resource<ImageResponse> {
         return try {
-            val response=pixabayAPI.searchForImage(imageQuery)
-            if (response.isSuccessful){
+            val response = pixabayAPI.searchForImage(imageQuery)
+            if(response.isSuccessful) {
                 response.body()?.let {
                     return@let Resource.success(it)
-                } ?: Resource.error("An error occurred",null)
-            } else{
-                Resource.error("An unknown error occurred",null)
+                } ?: Resource.error("An unknown error occured", null)
+            } else {
+                Resource.error("An unknown error occured", null)
             }
-        }catch (e:Exception){
-            Resource.error("Couldn't reach the server.Check Internet connection",null)
+        } catch(e: Exception) {
+            Resource.error("Couldn't reach the server. Check your internet connection", null)
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

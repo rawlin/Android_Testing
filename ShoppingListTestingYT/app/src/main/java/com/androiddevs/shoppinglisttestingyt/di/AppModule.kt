@@ -18,7 +18,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(ApplicationComponent::class)
 object AppModule {
@@ -27,14 +26,14 @@ object AppModule {
     @Provides
     fun provideShoppingItemDatabase(
         @ApplicationContext context: Context
-    )= Room.databaseBuilder(context,ShoppingItemDatabase::class.java,DATABASE_NAME).build()
+    ) = Room.databaseBuilder(context, ShoppingItemDatabase::class.java, DATABASE_NAME).build()
 
     @Singleton
     @Provides
     fun provideDefaultShoppingRepository(
-        dao:ShoppingDao,
-        api:PixabayAPI
-    )=DefaultShoppingRepository(dao,api) as ShoppingRepository
+        dao: ShoppingDao,
+        api: PixabayAPI
+    ) = DefaultShoppingRepository(dao, api) as ShoppingRepository
 
     @Singleton
     @Provides
@@ -44,7 +43,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun providePixabayAPI():PixabayAPI{
+    fun providePixabayApi(): PixabayAPI {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
@@ -52,3 +51,20 @@ object AppModule {
             .create(PixabayAPI::class.java)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

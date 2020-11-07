@@ -1,5 +1,3 @@
-package com.androiddevs.shoppinglisttestingyt
-
 /*
  * Copyright (C) 2019 The Android Open Source Project
  *
@@ -15,7 +13,7 @@ package com.androiddevs.shoppinglisttestingyt
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+package com.androiddevs.shoppinglisttestingyt
 
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData

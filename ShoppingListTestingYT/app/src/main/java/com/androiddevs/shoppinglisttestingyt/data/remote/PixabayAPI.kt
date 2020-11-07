@@ -10,8 +10,7 @@ interface PixabayAPI {
 
     @GET("/api/")
     suspend fun searchForImage(
-        @Query("q") searchQery:String,
-        @Query("key") apikey:String =BuildConfig.API_KEY
-    ):Response<ImageResponse>
-
+        @Query("q") searchQuery: String,
+        @Query("key") apiKey: String = BuildConfig.API_KEY
+    ): Response<ImageResponse>
 }

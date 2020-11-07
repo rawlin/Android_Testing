@@ -10,7 +10,6 @@ import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
 import org.junit.Before
@@ -83,3 +82,16 @@ class ShoppingDaoTest {
         assertThat(totalPriceSum).isEqualTo(2 * 10f + 4 * 5.5f)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

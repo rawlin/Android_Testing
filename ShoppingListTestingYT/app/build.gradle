@@ -15,9 +15,9 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        buildConfigField("String","API_KEY",API_KEY)
+        buildConfigField("String", "API_KEY", API_KEY)
 
-        testInstrumentationRunner "com.androidevs.shoppinglisttestingyt.HiltTestRunner"
+        testInstrumentationRunner "com.androiddevs.shoppinglisttestingyt.HiltTestRunner"
     }
 
     buildTypes {
@@ -118,3 +118,20 @@ dependencies {
     kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.28-alpha'
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
